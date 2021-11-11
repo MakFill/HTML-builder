@@ -4,7 +4,7 @@ const { mkdir, copyFile, readdir } = require('fs/promises');
 const filesPath = path.join(__dirname, 'files');
 const filesCopyPath = path.join(__dirname, 'files-copy');
 
-function copyFolder() {
+function copyDir() {
   mkdir(filesCopyPath, { recursive: true })
     .then(() => readdir(filesPath, { withFileTypes: true }))
     .then((res) =>
@@ -14,4 +14,4 @@ function copyFolder() {
     );
 }
 
-copyFolder();
+copyDir();
